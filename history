@@ -1,0 +1,551 @@
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos
+$ cd TutorialdeGITparaprincipantes/
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ l
+total 0
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git version
+git version 2.31.1.windows.1
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=E:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+core.editor="E:\Users\frocc\AppData\Local\Programs\Microsoft VS Code\Code.exe" --wait
+alias.logpretty=log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+user.email=frocca17@gmail.com
+user.name=Federico 'Magus' Rocca
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=git@github.com:FedericoRocca/TutorialdeGITparaprincipantes.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ # Hasta acá configuraciones de nombre y email (git config --global user.name y user.email)
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ #git init ///inicializamos repositorio
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ #en .git se guarda la metadata usada por el cliente git
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ touch secreto.txt
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ touch .gitignote
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ vi .gitignote
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ mv .gitignote .gitignore
+vi
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ vi .gitignore
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ # agregamos secreto.txt al .gitignore
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ touch history
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ # git puede estar en 3 diferentes etapas
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ # working directory que es el work area, el area de trabajo donde trabajamos con los archivos a versionar
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ # staging es el area donde están los cambios no confirmados con un commit
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ # repository es el repositorio en si, es donde están los cambios commiteados
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        history
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git add history
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git add .gitignore
+warning: LF will be replaced by CRLF in .gitignore.
+The file will have its original line endings in your working directory
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   history
+
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ touch archivoQueNoQuiero
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git add archivoQueNoQuiero
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   archivoQueNoQuiero
+        new file:   history
+
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git rm --cached archivoQueNoQuiero
+rm 'archivoQueNoQuiero'
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   history
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        archivoQueNoQuiero
+
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git commit -m "Agregando los primeros archivos"
+[master (root-commit) 0415c8b] Agregando los primeros archivos
+ 2 files changed, 1 insertion(+)
+ create mode 100644 .gitignore
+ create mode 100644 history
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        archivoQueNoQuiero
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ rm archivoQueNoQuiero
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git log
+commit 0415c8ba38182be5043d8c8fd53ce7a57108a425 (HEAD -> master)
+Author: Federico 'Magus' Rocca <frocca17@gmail.com>
+Date:   Tue Oct 26 13:48:07 2021 -0300
+
+    Agregando los primeros archivos
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ ls -tlrh
+total 0
+-rw-r--r-- 1 frocc 197609 0 Oct 26 13:01 secreto.txt
+-rw-r--r-- 1 frocc 197609 0 Oct 26 13:07 history
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ vi secreto.txt
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ vi secreto.txt
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ touch archivorandom
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git add archivorandom
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git commit -m "agregamos archivo de muestra para hacer cambios"
+[master da66af4] agregamos archivo de muestra para hacer cambios
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 archivorandom
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ vi archivorandom
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+nothing to commit, working tree clean
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ vi archivorandom
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   archivorandom
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git diff
+warning: LF will be replaced by CRLF in archivorandom.
+The file will have its original line endings in your working directory
+diff --git a/archivorandom b/archivorandom
+index e69de29..3cf8ec4 100644
+--- a/archivorandom
++++ b/archivorandom
+@@ -0,0 +1 @@
++Hacemos un cambio en el archivo
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git add -A
+warning: LF will be replaced by CRLF in archivorandom.
+The file will have its original line endings in your working directory
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git commit
+hint: Waiting for your editor to close the file...
+Aborting commit due to empty commit message.
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git commit -m "Hicimos un cambio en el archivo"
+[master 6739d34] Hicimos un cambio en el archivo
+ 1 file changed, 1 insertion(+)
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git log
+commit 6739d3411b865cb9df6bbe99bb550bbd87c93bb0 (HEAD -> master)
+Author: Federico 'Magus' Rocca <frocca17@gmail.com>
+Date:   Tue Oct 26 13:57:47 2021 -0300
+
+    Hicimos un cambio en el archivo
+
+commit da66af47af24557ea4241ed89dd4535251b0b90a
+Author: Federico 'Magus' Rocca <frocca17@gmail.com>
+Date:   Tue Oct 26 13:56:33 2021 -0300
+
+    agregamos archivo de muestra para hacer cambios
+
+commit 0415c8ba38182be5043d8c8fd53ce7a57108a425
+Author: Federico 'Magus' Rocca <frocca17@gmail.com>
+Date:   Tue Oct 26 13:48:07 2021 -0300
+
+    Agregando los primeros archivos
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git pus
+git: 'pus' is not a git command. See 'git --help'.
+
+The most similar commands are
+        push
+        pull
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 850 bytes | 425.00 KiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:FedericoRocca/TutorialdeGITparaprincipantes.git
+ * [new branch]      master -> master
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git pull
+Already up to date.
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ # workflow
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ # branch = rama
+}
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git branch nuevaFeature
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git checkut nuewFeature
+git: 'checkut' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git checkout nuewFeature
+error: pathspec 'nuewFeature' did not match any file(s) known to git
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git checkout nuevaFeature
+Switched to branch 'nuevaFeature'
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (nuevaFeature)
+$ git branch
+  master
+* nuevaFeature
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (nuevaFeature)
+$ git status
+On branch nuevaFeature
+nothing to commit, working tree clean
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (nuevaFeature)
+$ l
+total 2.0K
+-rw-r--r-- 1 frocc 197609  0 Oct 26 13:07 history
+-rw-r--r-- 1 frocc 197609 32 Oct 26 13:55 secreto.txt
+-rw-r--r-- 1 frocc 197609 32 Oct 26 13:56 archivorandom
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (nuevaFeature)
+$ vi archivorandom
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (nuevaFeature)
+$ git add archivorandom
+warning: LF will be replaced by CRLF in archivorandom.
+The file will have its original line endings in your working directory
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (nuevaFeature)
+$ git commit -m "agregamos un nuevo cambio pero subidos en una branch"
+[nuevaFeature 6176d22] agregamos un nuevo cambio pero subidos en una branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (nuevaFeature)
+$ git push -u origin nuevaFeature
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 404 bytes | 404.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'nuevaFeature' on GitHub by visiting:
+remote:      https://github.com/FedericoRocca/TutorialdeGITparaprincipantes/pull/new/nuevaFeature
+remote:
+To github.com:FedericoRocca/TutorialdeGITparaprincipantes.git
+ * [new branch]      nuevaFeature -> nuevaFeature
+Branch 'nuevaFeature' set up to track remote branch 'nuevaFeature' from 'origin'.
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (nuevaFeature)
+$ git log
+commit 6176d22afe0d6f4e55a58fbc127fa4aa6a14bb30 (HEAD -> nuevaFeature, origin/nuevaFeature)
+Author: Federico 'Magus' Rocca <frocca17@gmail.com>
+Date:   Tue Oct 26 14:00:41 2021 -0300
+
+    agregamos un nuevo cambio pero subidos en una branch
+
+commit 6739d3411b865cb9df6bbe99bb550bbd87c93bb0 (origin/master, master)
+Author: Federico 'Magus' Rocca <frocca17@gmail.com>
+Date:   Tue Oct 26 13:57:47 2021 -0300
+
+    Hicimos un cambio en el archivo
+
+commit da66af47af24557ea4241ed89dd4535251b0b90a
+Author: Federico 'Magus' Rocca <frocca17@gmail.com>
+Date:   Tue Oct 26 13:56:33 2021 -0300
+
+    agregamos archivo de muestra para hacer cambios
+
+commit 0415c8ba38182be5043d8c8fd53ce7a57108a425
+Author: Federico 'Magus' Rocca <frocca17@gmail.com>
+Date:   Tue Oct 26 13:48:07 2021 -0300
+
+    Agregando los primeros archivos
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (nuevaFeature)
+$ git branch -a
+  master
+* nuevaFeature
+  remotes/origin/master
+  remotes/origin/nuevaFeature
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (nuevaFeature)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git pull
+Already up to date.
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git branch --merged
+* master
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git merge nuevaFeature
+Updating 6739d34..6176d22
+Fast-forward
+ archivorandom | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:FedericoRocca/TutorialdeGITparaprincipantes.git
+   6739d34..6176d22  master -> master
+
+#Una vez terminamos con el branch podemos eliminarla
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git push origin --delete nuevaFeature
+To github.com:FedericoRocca/TutorialdeGITparaprincipantes.git
+ - [deleted]         nuevaFeature
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git branch -a
+* master
+  nuevaFeature
+  remotes/origin/master
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git branch -d nuevaFeature
+Deleted branch nuevaFeature (was 6176d22).
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git branch -a
+* master
+  remotes/origin/master
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git checkout master
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git pull
+gitAlready up to date.
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git branch otraFeature
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git checkout otraFeature
+Switched to branch 'otraFeature'
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (otraFeature)
+$ vi archivorandom
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (otraFeature)
+$ git add -A
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (otraFeature)
+$ git commit -m "Agregamos otro cambio pero parados en otra branch"
+[otraFeature 3003a37] Agregamos otro cambio pero parados en otra branch
+ 1 file changed, 2 insertions(+)
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (otraFeature)
+$ git push
+fatal: The current branch otraFeature has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin otraFeature
+
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (otraFeature)
+$ git push origin otraFeature
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 441 bytes | 441.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'otraFeature' on GitHub by visiting:
+remote:      https://github.com/FedericoRocca/TutorialdeGITparaprincipantes/pull/new/otraFeature
+remote:
+To github.com:FedericoRocca/TutorialdeGITparaprincipantes.git
+ * [new branch]      otraFeature -> otraFeature
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (otraFeature)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git branch --merged
+* master
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git merge otraFeature
+Updating 6176d22..3003a37
+Fast-forward
+ archivorandom | 2 ++
+ 1 file changed, 2 insertions(+)
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:FedericoRocca/TutorialdeGITparaprincipantes.git
+   6176d22..3003a37  master -> master
+
+frocc@DESKTOP-H8H5TP8 MINGW64 ~/Desktop/Repos/TutorialdeGITparaprincipantes (master)
+$ git branch --merged
+* master
+  otraFeature
+
